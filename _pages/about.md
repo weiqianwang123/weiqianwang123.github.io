@@ -14,11 +14,11 @@ You can find my CV here: [Qianwei Wang's CV](../assets/)
 
 
 ## My pet
-<div style="display: inline-block; margin-right: 10px;">
-    <img src="../assets/dog1.png" alt="Dundun" style="width:400px;"/>
+<div style="display: inline-block; margin-right: 30px;">
+    <img src="../assets/dog1.png" alt="Dundun" style="width:500px;"/>
 </div>
 <div style="display: inline-block;">
-    <img src="../assets/dog2.png" alt="Dundun2" style="width:400px;"/>
+    <img src="../assets/dog2.png" alt="Dundun2" style="width:500px;"/>
 </div>
 
 
