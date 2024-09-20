@@ -17,4 +17,8 @@ You can find my CV here: [Qianwei Wang's CV](../assets/)
 - [A Shared Autonomy based Wheelchair Navigation Stack considering User Preference and Control]() <span style="float: right;">Accepted by i3CE</span>
 
 
+## My Dog Dundun
+<img src="../assets/images/dog1.jpg" alt="Dundun" style="width:300px;"/>
+<img src="../assets/images/dog2.jpg" alt="Dundun" style="width:300px;"/>
+
 
