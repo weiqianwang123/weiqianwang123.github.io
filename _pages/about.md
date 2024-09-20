@@ -18,7 +18,7 @@ You can find my CV here: [Qianwei Wang's CV](../assets/)
 
 
 ## My Dog Dundun
-<img src="../assets/images/dog1.jpg" alt="Dundun" style="width:300px;"/>
-<img src="../assets/images/dog2.jpg" alt="Dundun" style="width:300px;"/>
+<img src="../assets/dog1.jpg" alt="Dundun" style="width:300px;"/>
+<img src="../assets/dog2.jpg" alt="Dundun" style="width:300px;"/>
 
 
