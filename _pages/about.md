@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a junior undergraduate student majoring in Computer Science at the University of Michigan, Ann Arbor. My research interests include robot planning and human-robot interaction (HRI).I am looking for summer research opportunities in 2025.
+I am a junior undergraduate student majoring in Computer Science at the University of Michigan, Ann Arbor. My research interests include robot planning and human-robot interaction (HRI).<mark>I am looking for summer research opportunities in 2025.</mark>
 
 You can find my CV here: [Qianwei Wang's CV](../assets/)
 
