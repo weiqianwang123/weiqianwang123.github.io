@@ -12,8 +12,9 @@ I am a junior undergraduate student majoring in Computer Science at the Universi
 You can find my CV here: [Qianwei Wang's CV](../assets/)
 
 ## Publications
-- [Point2Graph: An End-to-end Point Cloud-based 3D Open-Vocabulary Scene Graph for Robot Navigation](https://www.arxiv.org/abs/2409.10350) - submitted to ICRA.
-- [Socially-Aware Shared Control Navigation for Assistive Mobile Robots in the Built Environment](https://arxiv.org/abs/2405.17279) - submitted to JCCE.
-- [A Shared Autonomy based Wheelchair Navigation Stack considering User Preference and Control]() - Accepted by i3CE.
+- [Point2Graph: An End-to-end Point Cloud-based 3D Open-Vocabulary Scene Graph for Robot Navigation](https://www.arxiv.org/abs/2409.10350) <span style="float: right;">Submitted to ICRA</span>
+- [Socially-Aware Shared Control Navigation for Assistive Mobile Robots in the Built Environment](https://arxiv.org/abs/2405.17279) <span style="float: right;">Submitted to JCCE</span>
+- [A Shared Autonomy based Wheelchair Navigation Stack considering User Preference and Control]() <span style="float: right;">Accepted by i3CE</span>
+
 
 
