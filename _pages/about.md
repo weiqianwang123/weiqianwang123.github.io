@@ -25,6 +25,7 @@ You can find my CV here: [Qianwei Wang's CV](../assets/RESUME.pdf)
 
 
 # Publications
+<div style="margin-top: 40px;"></div> 
 - [Point2Graph: An End-to-end Point Cloud-based 3D Open-Vocabulary Scene Graph for Robot Navigation](https://www.arxiv.org/abs/2409.10350) <span style="float: right;">Submitted to ICRA</span>
 - [Socially-Aware Shared Control Navigation for Assistive Mobile Robots in the Built Environment](https://arxiv.org/abs/2405.17279) <span style="float: right;">Submitted to JCCE</span>
 - [A Shared Autonomy based Wheelchair Navigation Stack considering User Preference and Control]() <span style="float: right;">Accepted by i3CE</span>
