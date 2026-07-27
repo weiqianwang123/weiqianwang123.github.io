@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Qianwei (Robin) Wang — Resume</title>
+<!--
+  One-page resume (US Letter). Regenerate the PDF after editing:
+
+  1. BROWSER — open this file, Ctrl+P, "Save as PDF". Margins = Default,
+     Scale = 100%, uncheck "Headers and footers".
+  2. HEADLESS — chrome --headless --no-pdf-header-footer \
+       --print-to-pdf=qianwei_wang_resume.pdf data/resume.html
+
+  Entry headings use tables (not float) so the layout also survives
+  LibreOffice's HTML importer, which ignores @page and float.
+-->
+<style>
+  @page { size: letter; margin: 0.5in 0.6in; }
+
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 10.2pt;
+    line-height: 1.38;
+    color: #1a1a1a;
+  }
+
+  /* On-screen preview mimics the printed sheet */
+  @media screen {
+    body { background: #eef2f7; padding: 28px 0; }
+    .sheet {
+      width: 8.5in; min-height: 11in; margin: 0 auto; padding: 0.5in 0.6in;
+      background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,.14); box-sizing: border-box;
+    }
+  }
+
+  a { color: #1c5fb8; text-decoration: none; }
+
+  /* ---------- Header ---------- */
+  .name {
+    margin: 0 0 4px; font-size: 21pt; font-weight: bold;
+    text-align: center; color: #123a70;
+  }
+  .contact { margin: 0 0 13px; font-size: 9.2pt; text-align: center; color: #333; }
+  .dot { color: #9db8d8; }
+
+  /* ---------- Section headings ---------- */
+  h2 {
+    margin: 13px 0 6px; padding-bottom: 2px;
+    border-bottom: 1pt solid #1c5fb8;
+    font-size: 10.5pt; font-weight: bold;
+    letter-spacing: .09em; text-transform: uppercase; color: #123a70;
+  }
+  h2.first { margin-top: 4px; }
+
+  /* ---------- Entry rows (table keeps date right-aligned everywhere) ---------- */
+  table.e { width: 100%; border-collapse: collapse; margin: 0; }
+  table.e td { padding: 0; vertical-align: baseline; border: 0; }
+  td.d { text-align: right; white-space: nowrap; font-size: 9.4pt; font-style: italic; color: #444; }
+
+  .role { font-weight: bold; }
+  .org  { font-style: italic; }
+  .meta { font-size: 9.4pt; color: #444; margin: 0; }
+
+  .entry { margin-bottom: 9px; }
+
+  /* ---------- Bullets ---------- */
+  ul { margin: 3px 0 0; padding-left: 17px; }
+  li { margin: 0 0 3px; }
+
+  ol.pubs { margin: 3px 0 0; padding-left: 18px; }
+  ol.pubs li { margin-bottom: 7px; }
+
+  .pub-title { font-weight: bold; }
+  .venue { font-style: italic; }
+  .me { text-decoration: underline; }
+
+  p { margin: 2px 0 0; }
+  .kv b { display: inline-block; min-width: 80px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- =================== HEADER =================== -->
+  <div class="name">Qianwei (Robin) Wang</div>
+  <div class="contact">
+    <a href="mailto:weiqianwang123@gmail.com">weiqianwang123@gmail.com</a>
+    <span class="dot">&bull;</span> (734) 834-3852
+    <span class="dot">&bull;</span> <a href="https://weiqianwang123.github.io/">weiqianwang123.github.io</a>
+    <span class="dot">&bull;</span> <a href="https://github.com/weiqianwang123/">github.com/weiqianwang123</a>
+    <span class="dot">&bull;</span> <a href="https://scholar.google.com/citations?user=GlXQu-IAAAAJ&hl=en">Google Scholar</a>
+  </div>
+
+  <!-- =================== EDUCATION =================== -->
+  <h2 class="first">Education</h2>
+
+  <div class="entry">
+    <table class="e"><tr>
+      <td width="72%"><span class="role">Princeton University</span>, Princeton, NJ</td>
+      <td class="d" width="28%" align="right">Sep. 2026 &ndash; May 2031 (expected)</td>
+    </tr></table>
+    <p class="meta">Ph.D. in Electrical and Computer Engineering &nbsp;&bull;&nbsp; Advisor: Prof. Tom Silver
+      &nbsp;&bull;&nbsp; Gordon Wu Fellowship</p>
+  </div>
+
+  <div class="entry">
+    <table class="e"><tr>
+      <td width="72%"><span class="role">University of Michigan, Ann Arbor</span>, Ann Arbor, MI</td>
+      <td class="d" width="28%" align="right">Sep. 2023 &ndash; May 2026</td>
+    </tr></table>
+    <p class="meta">B.S. in Computer Science with Honors &nbsp;&bull;&nbsp; GPA: 3.92/4.00</p>
+  </div>
+
+  <!-- =================== RESEARCH INTERESTS =================== -->
+  <h2>Research Interests</h2>
+  <p>Robot learning and physical reasoning &mdash; building general physical-reasoning models that let robots
+    plan over long horizons in everyday human environments, and making such robots useful for everyone.</p>
+
+  <!-- =================== EXPERIENCE =================== -->
+  <h2>Experience</h2>
+
+  <div class="entry">
+    <table class="e"><tr>
+      <td width="72%"><span class="role">Machine Learning Engineer Intern</span>,
+          <span class="org">Mondo Robotic</span>, Shenzhen, China</td>
+      <td class="d" width="28%" align="right">May 2026 &ndash; Aug. 2026</td>
+    </tr></table>
+    <ul>
+      <li>Built a <b>data-driven spatial memory</b> for household humanoid robots, learning persistent
+        object&ndash;place representations from robot interaction data rather than hand-tuned mapping
+        heuristics.</li>
+      <li>Integrated the memory into an <b>agentic framework</b> as a queryable long-horizon store, letting the
+        planner ground open-ended household instructions in where objects have been seen and how scenes
+        change over time.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <table class="e"><tr>
+      <td width="72%"><span class="role">Research Assistant</span>, <span class="org">Advanced Agent&ndash;Robotics
+          Technology Lab, CMU</span>, Pittsburgh, PA</td>
+      <td class="d" width="28%" align="right">May 2025 &ndash; Present</td>
+    </tr></table>
+    <p class="meta">Advisors: Prof. Katia Sycara, Dr. Yaqi Xie &nbsp;&bull;&nbsp; CMU RISS Summer Scholar</p>
+    <ul>
+      <li>Developed <b>UniPred</b>, a neuro-symbolic world model unifying deep predicate invention with
+        foundation models, learning symbolic abstractions for long-horizon manipulation from only a few
+        demonstrations.</li>
+      <li>Replaced hand-engineered predicate libraries with foundation-model-proposed candidates refined on
+        demonstration data, enabling bilevel planning to generalize to unseen objects and longer horizons.</li>
+    </ul>
+  </div>
+
+  <!-- =================== PUBLICATIONS =================== -->
+  <h2>Publications</h2>
+  <ol class="pubs">
+    <li>
+      <span class="pub-title">UniPred: Unifying Deep Predicate Invention with Foundation Models.</span><br>
+      <span class="me">Qianwei Wang</span>*, Bowen Li*, Zhanpeng Luo, Yifan Xu, Alexander Gray, Tom Silver,
+      Sebastian Scherer, Katia Sycara, Yaqi Xie. &nbsp;<span class="venue">Under review</span>, 2026.
+      &nbsp;[<a href="https://unipred.github.io/">project page</a>]
+      [<a href="https://arxiv.org/pdf/2512.17992">arXiv</a>]
+    </li>
+    <li>
+      <span class="pub-title">Point2Graph: An End-to-end Point Cloud-based 3D Open-Vocabulary Scene Graph
+      for Robot Navigation.</span><br>
+      Yifan Xu, Ziming Luo*, <span class="me">Qianwei Wang</span>*, Vineet Kamat, Carol Menassa.
+      &nbsp;<span class="venue">IEEE International Conference on Robotics and Automation (ICRA)</span>, 2025.
+    </li>
+  </ol>
+
+  <!-- =================== SKILLS =================== -->
+  <h2>Technical Skills</h2>
+  <p class="kv"><b>Languages:</b> Python, C/C++, MATLAB</p>
+  <p class="kv"><b>Frameworks:</b> PyTorch, ROS/ROS 2, OpenCV, Open3D, Eigen, Ceres, Gazebo</p>
+
+  <!-- =================== AWARDS =================== -->
+  <h2>Honors &amp; Awards</h2>
+  <ul>
+    <li>Gordon Y. S. Wu Fellowship, Princeton University, 2026 &nbsp;&bull;&nbsp; CMU Robotics Institute
+      Summer Scholar (RISS), 2025 &nbsp;&bull;&nbsp; Michigan SURE Fellowship, 2024</li>
+    <li>James B. Angell Scholar &nbsp;&bull;&nbsp; University Honors (&times;2), University of Michigan
+      &nbsp;&bull;&nbsp; First Prize, Chinese Mathematics Competitions &nbsp;&bull;&nbsp; Second Prize,
+      RoboMaster University Championship (RMUC, hosted by DJI)</li>
+  </ul>
+
+</div>
+</body>
+</html>
