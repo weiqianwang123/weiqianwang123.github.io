@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Academic CV of Qianwei (Robin) Wang. Princeton University Ph.D. student researching contact-rich manipulation.">
+<meta name="theme-color" content="#152e4b">
+<link rel="icon" href="../images/favicon/favicon.ico">
 <title>Qianwei (Robin) Wang — Resume</title>
 <!--
   One-page resume (US Letter). Regenerate the PDF after editing:
@@ -34,12 +38,12 @@
     }
   }
 
-  a { color: #1c5fb8; text-decoration: none; }
+  a { color: #152e4b; text-decoration: none; }
 
   /* ---------- Header ---------- */
   .name {
     margin: 0 0 4px; font-size: 21pt; font-weight: bold;
-    text-align: center; color: #123a70;
+    text-align: center; color: #152e4b;
   }
   .contact { margin: 0 0 13px; font-size: 9.2pt; text-align: center; color: #333; }
   .dot { color: #9db8d8; }
@@ -47,9 +51,9 @@
   /* ---------- Section headings ---------- */
   h2 {
     margin: 13px 0 6px; padding-bottom: 2px;
-    border-bottom: 1pt solid #1c5fb8;
+    border-bottom: 0.5pt solid #aab8c7;
     font-size: 10.5pt; font-weight: bold;
-    letter-spacing: .09em; text-transform: uppercase; color: #123a70;
+    letter-spacing: .09em; text-transform: uppercase; color: #152e4b;
   }
   h2.first { margin-top: 4px; }
 
@@ -77,13 +81,70 @@
 
   p { margin: 2px 0 0; }
   .kv b { display: inline-block; min-width: 80px; }
+
+  .equal-note { font-size: 9pt; color: #67727e; }
+  .skip-link { position: fixed; left: 16px; top: -100px; background: #152e4b; color: white; padding: 8px 15px; z-index: 2; }
+  .skip-link:focus { top: 12px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #355e87; outline-offset: 4px; }
+  @media screen {
+    * { box-sizing: border-box; }
+    body { background: white; color: #303b49; font: 15px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; padding: 0; }
+    a { text-underline-offset: 4px; }
+    a:hover { text-decoration: underline; }
+    .cv-toolbar { max-width: 900px; width: calc(100% - 72px); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 0; border-bottom: 1px solid #dfe4e9; font-size: 13px; }
+    .cv-toolbar div { display: flex; align-items: center; gap: 23px; }
+    .cv-toolbar button { color: #152e4b; font: inherit; background: none; border: 0; border-bottom: 1px solid #bbc8d3; cursor: pointer; padding: 0; }
+    .sheet { width: calc(100% - 72px); max-width: 900px; min-height: 0; margin: 0 auto; padding: 48px 0 70px; box-shadow: none; }
+    .cv-eyebrow { color: #67727e; font-size: 11px; text-transform: uppercase; letter-spacing: .13em; margin-bottom: 14px; }
+    .name { font: 43px/1.15 Georgia, "Times New Roman", serif; letter-spacing: -1.1px; text-align: left; margin: 0 0 20px; }
+    .contact { text-align: left; color: #67727e; font-size: 12px; line-height: 2.1; max-width: 820px; margin-bottom: 33px; }
+    .dot { margin: 0 5px; color: #a2afbc; }
+    h2 { font-size: 12px; letter-spacing: .09em; border-bottom: 1px solid #dfe4e9; padding-bottom: 11px; margin: 34px 0 17px; }
+    h2.first { margin-top: 0; }
+    .entry { margin-bottom: 23px; }
+    .meta, td.d { font-size: 12px; color: #67727e; }
+    td.d { padding-left: 12px !important; }
+    .meta { margin-top: 5px; }
+    .role { color: #152e4b; font-weight: 600; }
+    li { margin-bottom: 9px; }
+    ul { margin-top: 9px; padding-left: 19px; }
+    ol.pubs { padding-left: 19px; }
+    ol.pubs li { margin-bottom: 20px; padding-left: 5px; }
+    .pub-title { color: #152e4b; font-weight: 600; }
+    .equal-note { font-size: 12px; }
+    .kv b { min-width: 112px; color: #152e4b; }
+  }
+  @media screen and (max-width: 600px) {
+    .cv-toolbar, .sheet { width: calc(100% - 40px); }
+    .cv-toolbar { font-size: 11px; padding-block: 22px; gap: 12px; }
+    .cv-toolbar div { gap: 16px; }
+    .sheet { padding-top: 34px; }
+    .name { font-size: 34px; }
+    .contact { font-size: 11px; overflow-wrap: anywhere; }
+    table.e, table.e tbody, table.e tr, table.e td { display: block; width: 100%; }
+    table.e td.d { text-align: left; padding: 3px 0 0 !important; }
+    .meta { line-height: 1.7; }
+    body { font-size: 14px; }
+  }
+  @media print {
+    .cv-toolbar, .skip-link, .cv-eyebrow { display: none; }
+    h2 { break-after: avoid; }
+    .entry, ol.pubs li { break-inside: avoid; }
+  }
+
 </style>
 </head>
 <body>
-<div class="sheet">
+<a class="skip-link" href="#cv-content">Skip to CV</a>
+<nav class="cv-toolbar" aria-label="CV navigation">
+  <a class="back-link" href="../index.html">← Qianwei Wang</a>
+  <div><a href="qianwei_wang_resume.pdf" download>Download PDF ↗</a><button type="button" id="print-cv">Print</button></div>
+</nav>
+<main class="sheet" id="cv-content">
 
   <!-- =================== HEADER =================== -->
-  <div class="name">Qianwei (Robin) Wang</div>
+  <p class="cv-eyebrow">Academic CV</p>
+  <h1 class="name">Qianwei (Robin) Wang</h1>
   <div class="contact">
     <a href="mailto:weiqianwang123@gmail.com">weiqianwang123@gmail.com</a>
     <span class="dot">&bull;</span> (734) 834-3852
@@ -114,8 +175,7 @@
 
   <!-- =================== RESEARCH INTERESTS =================== -->
   <h2>Research Interests</h2>
-  <p>Robot learning and physical reasoning &mdash; building general physical-reasoning models that let robots
-    plan over long horizons and act through contact-rich interaction in everyday human environments.</p>
+  <p><strong>Contact-rich manipulation:</strong> contact with the world and contact with humans.</p>
 
   <!-- =================== EXPERIENCE =================== -->
   <h2>Experience</h2>
@@ -156,9 +216,9 @@
   <h2>Publications</h2>
   <ol class="pubs">
     <li>
-      <span class="pub-title">UniPred: Unifying Deep Predicate Invention with Foundation Models.</span><br>
-      <span class="me">Qianwei Wang</span>*, Bowen Li*, Zhanpeng Luo, Yifan Xu, Alexander Gray, Tom Silver,
-      Sebastian Scherer, Katia Sycara, Yaqi Xie. &nbsp;<span class="venue">Under review</span>, 2026.
+      <span class="pub-title">Unifying Deep Predicate Invention with Pre-trained Foundation Models.</span><br>
+      <span class="me">Qianwei Wang</span>*, Bowen Li*, Zhanpeng Luo, Yifan Xu, Vineet Kamat, Carol Menassa, Alexander Gray, Tom Silver,
+      Sebastian Scherer, Katia Sycara, Yaqi Xie. &nbsp;<span class="venue">IEEE Transactions on Robotics (T-RO)</span>, 2026 (accepted).
       &nbsp;[<a href="https://unipred.github.io/">project page</a>]
       [<a href="https://arxiv.org/pdf/2512.17992">arXiv</a>]
     </li>
@@ -169,6 +229,8 @@
       &nbsp;<span class="venue">IEEE International Conference on Robotics and Automation (ICRA)</span>, 2025.
     </li>
   </ol>
+
+  <p class="equal-note">* Equal contribution.</p>
 
   <!-- =================== SKILLS =================== -->
   <h2>Technical Skills</h2>
@@ -185,6 +247,7 @@
       RoboMaster University Championship (RMUC, hosted by DJI)</li>
   </ul>
 
-</div>
+</main>
+<script>document.querySelector("#print-cv").addEventListener("click", () => window.print());</script>
 </body>
 </html>
