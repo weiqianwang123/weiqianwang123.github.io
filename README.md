@@ -53,6 +53,6 @@ To regenerate the video, serve the sibling `unipred.github.io` repository on por
 
 ## Publications
 
-The page defaults to **Selected** (UniPred). **All** adds pySpatial, Point2Graph, and CoNav Chair. The filter uses accessible toggle buttons and leaves the full list readable when JavaScript is unavailable. To feature another paper, set its `data-selected` attribute to `true` in `index.html`.
+The page defaults to **Selected** (UniPred). **All** adds pySpatial, Point2Graph, and CoNav Chair. Each paper has a visual preview: UniPred keeps its custom video, and the other three use the original thumbnails from the coauthors’ homepages (sources in `images/publications/README.md`). The filter uses accessible toggle buttons and leaves the full list readable when JavaScript is unavailable. To feature another paper, set its `data-selected` attribute to `true` in `index.html`.
 
 Titles, authors, contribution marks, venues, and links were checked against [Zhanpeng Luo’s homepage](https://zhanpeng1202.github.io/), [Yifan Xu’s homepage](https://yifan-cloud.github.io/), the linked project pages, and arXiv on September 21, 2026. CoNav Chair is marked under review as listed on Yifan’s homepage. Jordan Lillie has no verified personal homepage linked here.
