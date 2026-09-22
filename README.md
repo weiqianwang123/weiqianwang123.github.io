@@ -45,7 +45,7 @@ the layout and stylesheet have since been rewritten.
 
 ## Publication preview
 
-The UniPred thumbnail is a 20-second, silent MP4: Feedback → Concept → Plan → Action. It uses the shared drawing functions from the current UniPred project website, followed by an excerpt of the actual table-cleaning experiment. The learning and planning animations are illustrative.
+The UniPred thumbnail is a roughly 58-second, silent MP4: Feedback → Concept → Plan → Action. It uses the shared drawing functions from the current UniPred project website, followed by the complete 46-second table-cleaning demonstration (three toys, towel grasping, and wiping), retaining the recording’s existing 3× speed. The learning and planning animations are illustrative.
 
 An accessible play/pause button sits below the preview, keeping controls clear of the illustration. Native controls remain as a fallback when JavaScript is unavailable. The project link opens the complete explanation. The preview plays only while visible, pauses when the tab is hidden, and does not automatically play when reduced motion is requested. The site itself has no build step or JavaScript dependencies.
 

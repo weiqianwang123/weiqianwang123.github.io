@@ -76,9 +76,9 @@ function ffmpeg(args) {
     const frame = path.join(work, 'action-frame.jpg');
     fs.writeFileSync(frame, Buffer.from(backdrop, 'base64'));
     const action = path.join(work, 'action.mp4');
-    await ffmpeg(['-loop', '1', '-framerate', '24', '-i', frame, '-ss', '38', '-t', '8', '-i', path.join(sourceRoot, 'static/videos/web/main_demo_1.mp4'), '-filter_complex', '[1:v]scale=718:404,setsar=1[robot];[0:v][robot]overlay=118:140:shortest=1,fps=24,setsar=1[out]', '-map', '[out]', '-t', '8', ...encoding, action]).done;
+    await ffmpeg(['-loop', '1', '-framerate', '24', '-i', frame, '-i', path.join(sourceRoot, 'static/videos/web/main_demo_1.mp4'), '-filter_complex', '[1:v]scale=718:404,setsar=1[robot];[0:v][robot]overlay=118:140:shortest=1,fps=24,setsar=1[out]', '-map', '[out]', '-shortest', ...encoding, action]).done;
     fs.writeFileSync(path.join(work, 'concat.txt'), "file 'intro.mp4'\nfile 'action.mp4'\n");
     await ffmpeg(['-f', 'concat', '-safe', '0', '-i', path.join(work, 'concat.txt'), '-c', 'copy', '-movflags', '+faststart', path.join(output, 'preview.mp4')]).done;
-    console.log('Saved 20-second preview:', path.join(output, 'preview.mp4'));
+    console.log('Saved preview with complete table-cleaning demonstration:', path.join(output, 'preview.mp4'));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exit(1); });
