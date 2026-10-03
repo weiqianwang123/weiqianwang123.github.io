@@ -46,6 +46,27 @@
   document.addEventListener('visibilitychange', update);
 })();
 
+// Thumbnail clips show their poster without JavaScript; they play only while visible.
+(() => {
+  const clips = [...document.querySelectorAll('.publication-thumbnail video')];
+  if (!clips.length || !('IntersectionObserver' in window)) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const visible = new Set();
+  const update = (clip) => {
+    if (document.hidden || reduced.matches || !visible.has(clip)) clip.pause();
+    else clip.play().catch(() => { /* The poster stays. */ });
+  };
+  const observer = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting, intersectionRatio }) => {
+    if (isIntersecting && intersectionRatio >= 0.35) visible.add(target);
+    else visible.delete(target);
+    update(target);
+  }), { threshold: [0, 0.35] });
+  clips.forEach(clip => observer.observe(clip));
+  const updateAll = () => clips.forEach(update);
+  reduced.addEventListener('change', updateAll);
+  document.addEventListener('visibilitychange', updateAll);
+})();
+
 // Keep every paper readable without JavaScript; enhance with a selected/all filter.
 (() => {
   const filter = document.querySelector('.publication-filter');

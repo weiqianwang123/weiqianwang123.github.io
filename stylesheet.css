@@ -168,7 +168,7 @@ footer a { text-decoration: none; }
 .publication[hidden], .publication-filter[hidden] { display: none; }
 .publication-compact { grid-template-columns: minmax(0, .96fr) minmax(0, 1fr); gap: 32px; padding-top: 33px; margin-top: 35px; border-top: 1px solid var(--line); }
 .publication-thumbnail { display: block; align-self: start; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; background: #fff; }
-.publication-thumbnail img { width: 100%; height: auto; }
+.publication-thumbnail img, .publication-thumbnail video { width: 100%; height: auto; }
 .publication-compact h3 { font-size: 23px; }
 .publication-compact .pub-authors { margin-top: 12px; }
 .publication-compact .pub-summary { margin-top: 10px; }
