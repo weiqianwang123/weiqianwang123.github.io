@@ -9,6 +9,7 @@
   const updateControl = () => {
     toggle.setAttribute('aria-label', video.paused ? 'Play UniPred preview' : 'Pause UniPred preview');
     toggle.firstElementChild.textContent = video.paused ? '▶' : 'Ⅱ';
+    toggle.querySelector('.preview-label').textContent = video.paused ? 'Play' : 'Pause';
   };
   toggle.addEventListener('click', () => {
     if (video.paused) video.play().catch(() => {});
@@ -73,12 +74,10 @@
   const papers = [...document.querySelectorAll('#publication-list > .publication')];
   if (!filter || !papers.length) return;
   const buttons = [...filter.querySelectorAll('button')];
-  const heading = document.querySelector('#publications-title');
   const status = document.querySelector('#publication-status');
   const show = (mode) => {
     papers.forEach(paper => { paper.hidden = mode === 'selected' && paper.dataset.selected !== 'true'; });
     buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.publicationFilter === mode)));
-    heading.textContent = mode === 'selected' ? 'Selected publications' : 'All publications';
     const count = papers.filter(paper => !paper.hidden).length;
     status.textContent = `${count} ${count === 1 ? 'publication' : 'publications'} shown`;
   };

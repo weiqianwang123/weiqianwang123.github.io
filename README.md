@@ -16,6 +16,12 @@ Personal academic website of Qianwei (Robin) Wang — <https://weiqianwang123.gi
 | `build_resume.sh` | Renders `data/resume.html` → the PDF |
 | `images/` | Site images; `images/originals/` holds pre-optimization copies |
 
+## Design
+
+The October 14, 2026 refresh uses a compact white-and-navy academic layout with system fonts. Publications use the full content width: a 260px media column and a wider text column on desktop, with stacked entries on phones. Paper titles are 18px and author/summary text is 14px; section headings stay modest. Research interests are a single paragraph, and the personal gallery is kept small. The Selected / All filter, all publication metadata and links, and existing video assets are retained.
+
+The layout has been checked at 320px, 390px, 768px, and 1440px widths, including video controls, reduced motion, the publication filter, and the no-JavaScript fallback.
+
 ## Local preview
 
 ```sh
