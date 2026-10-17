@@ -83,13 +83,7 @@ h1 { color: var(--navy); font-size: 36px; font-weight: 600; line-height: 1.2; le
 .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .gallery img { width: 100%; height: 106px; object-fit: cover; border-radius: 3px; }
 .gallery figure:last-child img { object-position: center 40%; }
-footer { display: grid; grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1fr); align-items: end; gap: 16px; padding: 19px 0 27px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-.footer-top { justify-self: end; }
-.visitor-widget { width: 200px; text-align: center; }
-.visitor-label { color: var(--navy); margin-bottom: 10px; font-size: 12px; }
-/* MapMyVisitors measures the parent width when it initializes. */
-.visitor-globe { width: 180px; min-height: 196px; margin-inline: auto; isolation: isolate; }
-.visitor-stats { display: inline-block; margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 19px 0 27px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 @media (max-width: 900px) {
   .page { width: calc(100% - 56px); }
   .hero { gap: 35px; grid-template-columns: minmax(0, 1fr) 160px; }
@@ -131,9 +125,6 @@ footer { display: grid; grid-template-columns: minmax(0, 1fr) 200px minmax(0, 1f
   .publication + .publication { margin-top: 23px; padding-top: 23px; }
   .beyond { grid-template-columns: 1fr; gap: 18px; }
   .gallery { max-width: 280px; }
-  footer { grid-template-columns: 1fr 1fr; gap: 20px 16px; }
-  .visitor-widget { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
-  .footer-copyright, .footer-top { grid-row: 2; }
 }
 @media (max-width: 360px) {
   .page { width: calc(100% - 32px); }

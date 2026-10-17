@@ -85,24 +85,3 @@
   show('selected');
   filter.hidden = false;
 })();
-
-// Keep the globe linked to this site's dashboard even if the provider's data request fails.
-(() => {
-  const widget = document.querySelector('.visitor-widget');
-  const stats = widget?.querySelector('.visitor-stats');
-  if (!stats) return;
-  const linkGlobe = () => {
-    const globe = widget.querySelector('#mmvst_a');
-    if (!globe) return false;
-    globe.href = stats.href;
-    globe.target = '_blank';
-    globe.rel = 'noopener noreferrer';
-    globe.setAttribute('aria-label', 'View visitor statistics on MapMyVisitors');
-    return true;
-  };
-  if (linkGlobe()) return;
-  const observer = new MutationObserver(() => {
-    if (linkGlobe()) observer.disconnect();
-  });
-  observer.observe(widget, { childList: true, subtree: true });
-})();
