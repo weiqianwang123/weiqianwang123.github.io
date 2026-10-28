@@ -210,51 +210,6 @@ h3 a:hover {
   padding-bottom: 0.5em;
 }
 
-/* Narrow screens. */
-@media (max-width: 640px) {
-  #main {
-    padding-top: 1.5em;
-  }
-  #intro {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  #intro-image {
-    width: 45%;
-  }
-  h1 {
-    line-height: 1.3em;
-    margin-bottom: 0.4em;
-  }
-  .aka {
-    display: block;
-    margin: 0.3em 0 0;
-    font-size: 0.42em;
-    line-height: 1.4em;
-  }
-  .button {
-    font-size: 1.05em;
-    line-height: 1.8em;
-    margin-top: 0.3em;
-    margin-right: 0.75em;
-  }
-  .thumbnail,
-  .project-description {
-    width: 100%;
-    float: none;
-    margin-right: 0;
-  }
-  .thumbnail {
-    margin-bottom: 0.5em;
-  }
-  #footer {
-    position: static;
-    line-height: 1.6em;
-    padding-bottom: 1.5em;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -7,7 +7,7 @@ Personal academic website of Qianwei (Robin) Wang — <https://weiqianwang123.gi
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whole site — one page, no build step |
-| `stylesheet.css` | Minimal white layout after Andy Zeng's and Jon Barron's templates (via qiayuanl.github.io) |
+| `stylesheet.css` | Minimal white layout after Andy Zeng's and Jon Barron's templates (via qiayuanl.github.io); phones show it as on a desktop, scaled to fit (`<meta name="viewport" content="width=900">`) |
 | `site.js` | Research / Publications / Beyond research tabs; thumbnail videos load after the page and respect reduced motion |
 | `images/unipred/` | UniPred thumbnail video and source notes |
 | `data/resume.html` | Public responsive HTML CV, linked from the homepage; also the PDF print source |
