@@ -7,10 +7,9 @@ Personal academic website of Qianwei (Robin) Wang — <https://weiqianwang123.gi
 | Path | What it is |
 | --- | --- |
 | `index.html` | The whole site — one page, no build step |
-| `stylesheet.css` | Responsive white and navy layout; design tokens in `:root` |
-| `site.js` | Selected / All publication filter and viewport-aware preview playback; respects reduced motion |
-| `images/unipred/` | UniPred four-stage preview and source notes |
-| `scripts/render-unipred-preview.cjs` | Optional offline preview renderer, using the UniPred project animation |
+| `stylesheet.css` | Minimal white layout after Andy Zeng's and Jon Barron's templates (via qiayuanl.github.io) |
+| `site.js` | Research / Publications / Beyond research tabs; thumbnail videos load after the page and respect reduced motion |
+| `images/unipred/` | UniPred thumbnail video and source notes |
 | `data/resume.html` | Public responsive HTML CV, linked from the homepage; also the PDF print source |
 | `data/qianwei_wang_resume.pdf` | One-page PDF, downloadable from the HTML CV |
 | `build_resume.sh` | Renders `data/resume.html` → the PDF |
@@ -51,14 +50,13 @@ the layout and stylesheet have since been rewritten.
 
 ## Publication preview
 
-The UniPred thumbnail is a roughly 58-second, silent MP4: Feedback → Concept → Plan → Action. It uses the shared drawing functions from the current UniPred project website, followed by the complete 46-second table-cleaning demonstration (three toys, towel grasping, and wiping), retaining the recording’s existing 3× speed. The learning and planning animations are illustrative.
-
-An accessible play/pause button sits below the preview, keeping controls clear of the illustration. Native controls remain as a fallback when JavaScript is unavailable. The project link opens the complete explanation. The preview plays only while visible, pauses when the tab is hidden, and does not automatically play when reduced motion is requested. The site itself has no build step or JavaScript dependencies.
-
-To regenerate the video, serve the sibling `unipred.github.io` repository on port 8031, then run `node scripts/render-unipred-preview.cjs` with Playwright, Chrome, and ffmpeg available. `SOURCE_ORIGIN`, `UNIPRED_SOURCE`, and `PREVIEW_OUTPUT` can override the defaults.
+The UniPred thumbnail is a 10-second silent loop (960 × 540) cut from the
+UniPred film on the project page: the real robot wiping a table and moving
+a bottle, a point cloud, the agent separating a concept, and derived
+concepts tagged in simulation. See `images/unipred/README.md`.
 
 ## Publications
 
-The page defaults to **Selected** (UniPred). **All** adds Coding Agents for Generalized TAMP, pySpatial, Point2Graph, and CoNav Chair. Each paper has a visual preview: UniPred keeps its custom video, Coding Agents for Generalized TAMP uses the video from Bowen Li’s homepage, and the others use the original thumbnails from the coauthors’ homepages (sources in `images/publications/README.md`). Thumbnail videos show their poster until visible and never play when reduced motion is requested. The filter uses accessible toggle buttons and leaves the full list readable when JavaScript is unavailable. To feature another paper, set its `data-selected` attribute to `true` in `index.html`.
+The page opens on **Research** (the research interests and UniPred). **Publications** lists all of them: UniPred, Coding Agents for Generalized TAMP, pySpatial, Point2Graph, and CoNav Chair. Each paper has a visual preview: UniPred keeps its custom video, Coding Agents for Generalized TAMP uses the video from Bowen Li’s homepage, and the others use the original thumbnails from the coauthors’ homepages (sources in `images/publications/README.md`). Thumbnail videos show their poster until visible and never play when reduced motion is requested. Without JavaScript every item is shown. To feature another paper under Research, add `research` to its `data-category` in `index.html`.
 
 Titles, authors, contribution marks, venues, and links were checked against [Zhanpeng Luo’s homepage](https://zhanpeng1202.github.io/), [Yifan Xu’s homepage](https://yifan-cloud.github.io/), the linked project pages, and arXiv on September 21, 2026. CoNav Chair is marked under review as listed on Yifan’s homepage. Coding Agents for Generalized TAMP was checked against [Bowen Li’s homepage](https://jaraxxus-me.github.io/), its project page, and arXiv on October 3, 2026. Jordan Lillie has no verified personal homepage linked here.

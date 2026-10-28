@@ -1,87 +1,54 @@
 'use strict';
-// Preview motion is optional; native controls remain available without JavaScript.
-(() => {
-  const video = document.querySelector('#unipred-preview');
-  if (!video || !('IntersectionObserver' in window)) return;
-  const toggle = document.querySelector('#preview-toggle');
-  video.controls = false;
-  toggle.hidden = false;
-  const updateControl = () => {
-    toggle.setAttribute('aria-label', video.paused ? 'Play UniPred preview' : 'Pause UniPred preview');
-    toggle.firstElementChild.textContent = video.paused ? '▶' : 'Ⅱ';
-    toggle.querySelector('.preview-label').textContent = video.paused ? 'Play' : 'Pause';
-  };
-  toggle.addEventListener('click', () => {
-    if (video.paused) video.play().catch(() => {});
-    else video.pause();
-  });
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let visible = false;
-  let manuallyPaused = false;
-  let automaticPause = false;
-  const pauseAutomatically = () => {
-    if (!video.paused) {
-      automaticPause = true;
-      video.pause();
-    }
-  };
-  const update = () => {
-    if (document.hidden || !visible || reduced.matches) {
-      pauseAutomatically();
-    } else if (!manuallyPaused) {
-      video.play().catch(() => { /* Native play remains available. */ });
-    }
-  };
-  video.addEventListener('pause', () => {
-    if (!automaticPause && visible && !document.hidden) manuallyPaused = true;
-    automaticPause = false;
-    updateControl();
-  });
-  video.addEventListener('play', () => { manuallyPaused = false; updateControl(); });
-  updateControl();
-  new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting && entry.intersectionRatio >= 0.35;
-    update();
-  }, { threshold: [0, 0.35] }).observe(video);
-  reduced.addEventListener('change', update);
-  document.addEventListener('visibilitychange', update);
-})();
 
-// Thumbnail clips show their poster without JavaScript; they play only while visible.
+// The section buttons show the items of their section.
 (() => {
-  const clips = [...document.querySelectorAll('.publication-thumbnail video')];
-  if (!clips.length || !('IntersectionObserver' in window)) return;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const visible = new Set();
-  const update = (clip) => {
-    if (document.hidden || reduced.matches || !visible.has(clip)) clip.pause();
-    else clip.play().catch(() => { /* The poster stays. */ });
+  const buttons = [...document.querySelectorAll('#filters .button')];
+  const items = [...document.querySelectorAll('.grid .list-item')];
+  const show = (filter) => {
+    buttons.forEach((button) => {
+      const on = button.dataset.filter === filter;
+      button.classList.toggle('is-checked', on);
+      button.setAttribute('aria-selected', String(on));
+    });
+    items.forEach((item) => {
+      const categories = (item.dataset.category || '').split(' ');
+      item.classList.toggle('is-hidden', !categories.includes(filter));
+    });
+    playVisible();
   };
-  const observer = new IntersectionObserver(entries => entries.forEach(({ target, isIntersecting, intersectionRatio }) => {
-    if (isIntersecting && intersectionRatio >= 0.35) visible.add(target);
-    else visible.delete(target);
-    update(target);
-  }), { threshold: [0, 0.35] });
-  clips.forEach(clip => observer.observe(clip));
-  const updateAll = () => clips.forEach(update);
-  reduced.addEventListener('change', updateAll);
-  document.addEventListener('visibilitychange', updateAll);
-})();
+  buttons.forEach((button) =>
+    button.addEventListener('click', () => show(button.dataset.filter)));
 
-// Keep every paper readable without JavaScript; enhance with a selected/all filter.
-(() => {
-  const filter = document.querySelector('.publication-filter');
-  const papers = [...document.querySelectorAll('#publication-list > .publication')];
-  if (!filter || !papers.length) return;
-  const buttons = [...filter.querySelectorAll('button')];
-  const status = document.querySelector('#publication-status');
-  const show = (mode) => {
-    papers.forEach(paper => { paper.hidden = mode === 'selected' && paper.dataset.selected !== 'true'; });
-    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.publicationFilter === mode)));
-    const count = papers.filter(paper => !paper.hidden).length;
-    status.textContent = `${count} ${count === 1 ? 'publication' : 'publications'} shown`;
-  };
-  buttons.forEach(button => button.addEventListener('click', () => show(button.dataset.publicationFilter)));
-  show('selected');
-  filter.hidden = false;
+  // Videos load after the page (so they do not delay the portrait), play
+  // while shown, and not at all when the reader asks for less motion.
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const videos = [...document.querySelectorAll('.grid video')];
+  function playVisible() {
+    videos.forEach((video) => {
+      const shown = !video.closest('.list-item').classList.contains('is-hidden');
+      if (shown && !reduced.matches && video.dataset.loaded) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }
+  window.addEventListener('load', () => {
+    if (reduced.matches) return;
+    videos.forEach((video) => {
+      const source = video.querySelector('source[data-src]');
+      if (!source) return;
+      source.src = source.dataset.src;
+      video.load();
+      video.dataset.loaded = '1';
+    });
+    playVisible();
+  });
+
+  // A link may open a section: #publications or #beyond.
+  const fromHash = { '#publications': 'publication', '#beyond': 'beyond' };
+  show(fromHash[location.hash] || 'research');
+  window.addEventListener('hashchange', () => {
+    if (fromHash[location.hash]) show(fromHash[location.hash]);
+  });
 })();
